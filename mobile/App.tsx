@@ -8,12 +8,9 @@ import {
 
 import { THEME } from "./src/styles/theme";
 import { Loading } from "./src/components/Loading";
-import SignIn from "./src/screens/SignIn";
 import { AuthContextProvider } from "./src/context/AuthContext";
-import NewPool from "./src/screens/NewPool";
-import FindPool from "./src/screens/FindPool";
-import Pools from "./src/screens/Pools";
-import CupStadiums from "./src/screens/CupStadiums";
+
+import Routes from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -30,7 +27,8 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <CupStadiums /> : <Loading />}
+
+        {fontsLoaded ? <Routes /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );
